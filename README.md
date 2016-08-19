@@ -1,0 +1,1 @@
+# OpenGeoDB-for-SAP-HANA
