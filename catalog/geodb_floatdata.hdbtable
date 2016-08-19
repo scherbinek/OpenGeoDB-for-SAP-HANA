@@ -1,0 +1,17 @@
+// geodb_floatdata
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "loc_id";  sqlType = INTEGER; nullable = false; },
+    {name = "float_type";  sqlType = INTEGER; nullable = false; },
+    {name = "float_val";  sqlType = DOUBLE; nullable = false; },
+    {name = "valid_since";  sqlType = NVARCHAR; length = 10; },	
+    {name = "date_type_since";  sqlType = INTEGER; },    
+    {name = "valid_until";  sqlType = NVARCHAR; length = 10; nullable = false; },
+    {name = "date_type_until";  sqlType = INTEGER; nullable = false; }
+];
+
+// table.primaryKey.pkcolumns = ["MY_COL1", "MY_COL2"];

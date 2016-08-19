@@ -1,0 +1,20 @@
+// geodb_textdata
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "loc_id";  sqlType = INTEGER; nullable = false; },
+    {name = "text_type";  sqlType = INTEGER; nullable = false; },
+    {name = "text_val";  sqlType = NVARCHAR; length = 255; nullable = false; },
+    {name = "text_locale";  sqlType = NVARCHAR; length = 5; },
+    {name = "is_native_lang";  sqlType = SMALLINT; },
+    {name = "is_default_name";  sqlType = SMALLINT; },
+    {name = "valid_since";  sqlType = NVARCHAR; length = 10; },	
+    {name = "date_type_since";  sqlType = INTEGER; },    
+    {name = "valid_until";  sqlType = NVARCHAR; length = 10; nullable = false; },
+    {name = "date_type_until";  sqlType = INTEGER; nullable = false; }
+];
+
+// table.primaryKey.pkcolumns = ["MY_COL1", "MY_COL2"];

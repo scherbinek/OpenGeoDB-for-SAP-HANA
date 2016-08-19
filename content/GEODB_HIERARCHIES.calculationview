@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="GEODB_HIERARCHIES" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="GEODB_HIERARCHIES"/>
+  <metadata activatedAt="2016-08-19 12:31:37.0" changedAt="2016-08-19 14:39:00.3" createdAt="2016-08-19 14:39:00.3"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="OpenGeoDB.catalog::geodb_hierarchies" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="OpenGeoDB.catalog::geodb_hierarchies">
+    <descriptions defaultDescription="GEODB_HIERARCHIES"/>
+    <attributes>
+      <attribute id="loc_id" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="loc_id"/>
+      </attribute>
+      <attribute id="level" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="level"/>
+      </attribute>
+      <attribute id="id_lvl1" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl1"/>
+      </attribute>
+      <attribute id="id_lvl2" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl2"/>
+      </attribute>
+      <attribute id="id_lvl3" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl3"/>
+      </attribute>
+      <attribute id="id_lvl4" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl4"/>
+      </attribute>
+      <attribute id="id_lvl5" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl5"/>
+      </attribute>
+      <attribute id="id_lvl6" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl6"/>
+      </attribute>
+      <attribute id="id_lvl7" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl7"/>
+      </attribute>
+      <attribute id="id_lvl8" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl8"/>
+      </attribute>
+      <attribute id="id_lvl9" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="id_lvl9"/>
+      </attribute>
+      <attribute id="valid_since" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="valid_since"/>
+      </attribute>
+      <attribute id="date_type_since" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="date_type_since"/>
+      </attribute>
+      <attribute id="valid_until" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="valid_until"/>
+      </attribute>
+      <attribute id="date_type_until" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_hierarchies" columnName="date_type_until"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

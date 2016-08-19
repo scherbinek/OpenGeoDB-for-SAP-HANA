@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="GEODB_TEXTDATA" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="GEODB_TEXTDATA"/>
+  <metadata changedAt="2016-08-19 15:44:54.438"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="OpenGeoDB.catalog::geodb_textdata" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="OpenGeoDB.catalog::geodb_textdata">
+    <descriptions/>
+    <attributes>
+      <attribute id="loc_id" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="loc_id"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="loc_id"/>
+      </attribute>
+      <attribute id="text_type" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_type"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="text_type"/>
+      </attribute>
+      <attribute id="text_val" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_val"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="text_val"/>
+      </attribute>
+      <attribute id="text_locale" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_locale"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="text_locale"/>
+      </attribute>
+      <attribute id="is_native_lang" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="is_native_lang"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="is_native_lang"/>
+      </attribute>
+      <attribute id="is_default_name" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="is_default_name"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="is_default_name"/>
+      </attribute>
+      <attribute id="valid_since" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="valid_since"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="valid_since"/>
+      </attribute>
+      <attribute id="date_type_since" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="date_type_since"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="date_type_since"/>
+      </attribute>
+      <attribute id="valid_until" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="valid_until"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="valid_until"/>
+      </attribute>
+      <attribute id="date_type_until" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="date_type_until"/>
+        <keyMapping schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_textdata" columnName="date_type_until"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

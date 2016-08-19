@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="V_GEODB" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="V_GEODB"/>
+  <metadata changedAt="2016-08-19 14:45:49.712" createdAt="2016-08-19 14:39:01.004"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="40"/>
+  <dataSources>
+    <DataSource id="GEODB" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/OpenGeoDB.content/calculationviews/GEODB</resourceUri>
+    </DataSource>
+    <DataSource id="GEODB_TEXTDATA" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/dev.geodb/calculationviews/GEODB_TEXTDATA</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="loc_type"/>
+        <viewAttribute id="GEODB_TEXTDATA_loc_id"/>
+        <viewAttribute id="text_type"/>
+        <viewAttribute id="text_val"/>
+        <viewAttribute id="text_locale"/>
+        <viewAttribute id="is_native_lang"/>
+        <viewAttribute id="is_default_name"/>
+        <viewAttribute id="GEODB_COORDINATES_loc_id"/>
+        <viewAttribute id="coord_type"/>
+        <viewAttribute id="lat"/>
+        <viewAttribute id="lon"/>
+        <viewAttribute id="coord_subtype"/>
+        <viewAttribute id="GEODB_FLOATDATA_loc_id"/>
+        <viewAttribute id="float_type"/>
+        <viewAttribute id="float_val"/>
+        <viewAttribute id="GEODB_INTDATA_loc_id"/>
+        <viewAttribute id="int_type"/>
+        <viewAttribute id="int_val"/>
+        <viewAttribute id="GEODB_HIERARCHIES_loc_id"/>
+        <viewAttribute id="level"/>
+        <viewAttribute id="id_lvl3"/>
+        <viewAttribute id="counter"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#GEODB">
+        <mapping xsi:type="Calculation:AttributeMapping" target="loc_type" source="loc_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_TEXTDATA_loc_id" source="GEODB_TEXTDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_type" source="text_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_val" source="text_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_locale" source="text_locale"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="is_native_lang" source="is_native_lang"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="is_default_name" source="is_default_name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_COORDINATES_loc_id" source="GEODB_COORDINATES_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="coord_type" source="coord_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="lat" source="lat"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="lon" source="lon"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="coord_subtype" source="coord_subtype"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_FLOATDATA_loc_id" source="GEODB_FLOATDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="float_type" source="float_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="float_val" source="float_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_INTDATA_loc_id" source="GEODB_INTDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="int_type" source="int_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="int_val" source="int_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_HIERARCHIES_loc_id" source="GEODB_HIERARCHIES_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="level" source="level"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="id_lvl3" source="id_lvl3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="counter" source="counter"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_9">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="loc_id"/>
+        <viewAttribute id="geo_lvl3"/>
+        <viewAttribute id="text_type">
+          <filter xsi:type="AccessControl:SingleValueFilter" including="true" value="500100000"/>
+        </viewAttribute>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#GEODB_TEXTDATA">
+        <mapping xsi:type="Calculation:AttributeMapping" target="loc_id" source="loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="geo_lvl3" source="text_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_type" source="text_type"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="loc_type"/>
+        <viewAttribute id="GEODB_TEXTDATA_loc_id"/>
+        <viewAttribute id="text_type"/>
+        <viewAttribute id="text_val"/>
+        <viewAttribute id="text_locale"/>
+        <viewAttribute id="is_native_lang"/>
+        <viewAttribute id="is_default_name"/>
+        <viewAttribute id="GEODB_COORDINATES_loc_id"/>
+        <viewAttribute id="coord_type"/>
+        <viewAttribute id="lat"/>
+        <viewAttribute id="lon"/>
+        <viewAttribute id="coord_subtype"/>
+        <viewAttribute id="GEODB_FLOATDATA_loc_id"/>
+        <viewAttribute id="float_type"/>
+        <viewAttribute id="float_val"/>
+        <viewAttribute id="GEODB_INTDATA_loc_id"/>
+        <viewAttribute id="int_type"/>
+        <viewAttribute id="int_val"/>
+        <viewAttribute id="GEODB_HIERARCHIES_loc_id"/>
+        <viewAttribute id="level"/>
+        <viewAttribute id="geo_lvl3"/>
+        <viewAttribute id="counter"/>
+        <viewAttribute hidden="true" id="JOIN$id_lvl3$loc_id"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="loc_type" source="loc_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_TEXTDATA_loc_id" source="GEODB_TEXTDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_type" source="text_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_val" source="text_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="text_locale" source="text_locale"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="is_native_lang" source="is_native_lang"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="is_default_name" source="is_default_name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_COORDINATES_loc_id" source="GEODB_COORDINATES_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="coord_type" source="coord_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="lat" source="lat"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="lon" source="lon"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="coord_subtype" source="coord_subtype"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_FLOATDATA_loc_id" source="GEODB_FLOATDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="float_type" source="float_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="float_val" source="float_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_INTDATA_loc_id" source="GEODB_INTDATA_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="int_type" source="int_type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="int_val" source="int_val"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEODB_HIERARCHIES_loc_id" source="GEODB_HIERARCHIES_loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="level" source="level"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="counter" source="counter"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$id_lvl3$loc_id" source="id_lvl3"/>
+      </input>
+      <input node="#Projection_9">
+        <mapping xsi:type="Calculation:AttributeMapping" target="geo_lvl3" source="geo_lvl3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$id_lvl3$loc_id" source="loc_id"/>
+      </input>
+      <joinAttribute name="JOIN$id_lvl3$loc_id"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_8">
+    <descriptions defaultDescription="V_GEODB"/>
+    <attributes>
+      <attribute id="loc_type" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="loc_type"/>
+        <keyMapping columnObjectName="Join_8" columnName="loc_type"/>
+      </attribute>
+      <attribute id="GEODB_TEXTDATA_loc_id" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GEODB_TEXTDATA_loc_id"/>
+        <keyMapping columnObjectName="Join_8" columnName="GEODB_TEXTDATA_loc_id"/>
+      </attribute>
+      <attribute id="text_type" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_type"/>
+        <keyMapping columnObjectName="Join_8" columnName="text_type"/>
+      </attribute>
+      <attribute id="text_val" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_val"/>
+        <keyMapping columnObjectName="Join_8" columnName="text_val"/>
+      </attribute>
+      <attribute id="text_locale" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="text_locale"/>
+        <keyMapping columnObjectName="Join_8" columnName="text_locale"/>
+      </attribute>
+      <attribute id="is_native_lang" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="is_native_lang"/>
+        <keyMapping columnObjectName="Join_8" columnName="is_native_lang"/>
+      </attribute>
+      <attribute id="is_default_name" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="is_default_name"/>
+        <keyMapping columnObjectName="Join_8" columnName="is_default_name"/>
+      </attribute>
+      <attribute id="GEODB_COORDINATES_loc_id" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GEODB_COORDINATES_loc_id"/>
+        <keyMapping columnObjectName="Join_8" columnName="GEODB_COORDINATES_loc_id"/>
+      </attribute>
+      <attribute id="coord_type" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="coord_type"/>
+        <keyMapping columnObjectName="Join_8" columnName="coord_type"/>
+      </attribute>
+      <attribute id="geo_stadt_lat" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="geo_stadt_lat"/>
+        <keyMapping columnObjectName="Join_8" columnName="lat"/>
+      </attribute>
+      <attribute id="geo_stadt_lon" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="geo_stadt_lon"/>
+        <keyMapping columnObjectName="Join_8" columnName="lon"/>
+      </attribute>
+      <attribute id="coord_subtype" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="coord_subtype"/>
+        <keyMapping columnObjectName="Join_8" columnName="coord_subtype"/>
+      </attribute>
+      <attribute id="GEODB_FLOATDATA_loc_id" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GEODB_FLOATDATA_loc_id"/>
+        <keyMapping columnObjectName="Join_8" columnName="GEODB_FLOATDATA_loc_id"/>
+      </attribute>
+      <attribute id="float_type" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="float_type"/>
+        <keyMapping columnObjectName="Join_8" columnName="float_type"/>
+      </attribute>
+      <attribute id="float_val" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="float_val"/>
+        <keyMapping columnObjectName="Join_8" columnName="float_val"/>
+      </attribute>
+      <attribute id="GEODB_INTDATA_loc_id" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GEODB_INTDATA_loc_id"/>
+        <keyMapping columnObjectName="Join_8" columnName="GEODB_INTDATA_loc_id"/>
+      </attribute>
+      <attribute id="int_type" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="int_type"/>
+        <keyMapping columnObjectName="Join_8" columnName="int_type"/>
+      </attribute>
+      <attribute id="int_val" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="int_val"/>
+        <keyMapping columnObjectName="Join_8" columnName="int_val"/>
+      </attribute>
+      <attribute id="GEODB_HIERARCHIES_loc_id" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GEODB_HIERARCHIES_loc_id"/>
+        <keyMapping columnObjectName="Join_8" columnName="GEODB_HIERARCHIES_loc_id"/>
+      </attribute>
+      <attribute id="level" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="level"/>
+        <keyMapping columnObjectName="Join_8" columnName="level"/>
+      </attribute>
+      <attribute id="geo_bundesland" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="geo_bundesland"/>
+        <keyMapping columnObjectName="Join_8" columnName="geo_lvl3"/>
+      </attribute>
+      <attribute id="counter" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="counter"/>
+        <keyMapping columnObjectName="Join_8" columnName="counter"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_9" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

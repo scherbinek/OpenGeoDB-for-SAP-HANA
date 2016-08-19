@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="GEODB" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED">
+  <origin/>
+  <descriptions defaultDescription="GEODB"/>
+  <metadata changedAt="2016-08-19 14:45:48.735" createdAt="2016-08-19 14:38:59.569"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="34"/>
+  <dataSources>
+    <DataSource id="OpenGeoDB.catalog::geodb_locations" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="OPENGEODB" columnObjectName="OpenGeoDB.catalog::geodb_locations"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="GEODB_LOCATIONS">
+      <descriptions defaultDescription="population"/>
+      <viewAttributes>
+        <viewAttribute id="loc_id"/>
+        <viewAttribute id="loc_type"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="anzahl" expressionLanguage="COLUMN_ENGINE">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#OpenGeoDB.catalog::geodb_locations">
+        <mapping xsi:type="Calculation:AttributeMapping" target="loc_id" source="loc_id"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="loc_type" source="loc_type"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="GEODB_LOCATIONS">
+    <descriptions defaultDescription="GEODB"/>
+    <attributes>
+      <attribute id="loc_type" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping columnObjectName="GEODB_LOCATIONS" columnName="loc_type"/>
+      </attribute>
+      <attribute id="loc_id$local">
+        <descriptions/>
+        <keyMapping columnObjectName="GEODB_LOCATIONS" columnName="loc_id"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="counter" order="2" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="counter"/>
+        <measureMapping columnObjectName="GEODB_LOCATIONS" columnName="anzahl"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/dev.geodb/calculationviews/GEODB_TEXTDATA">
+        <attributes>
+          <attributeRef>#loc_id$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>loc_id</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="GEODB_TEXTDATA_loc_id" attributeName="loc_id">
+            <descriptions defaultDescription="GEODB_TEXTDATA_loc_id"/>
+          </attributeReference>
+          <attributeReference attributeName="valid_until" hidden="true"/>
+          <attributeReference attributeName="date_type_since" hidden="true"/>
+          <attributeReference attributeName="valid_since" hidden="true"/>
+          <attributeReference attributeName="date_type_until" hidden="true"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/OpenGeoDB.content/calculationviews/GEODB_COORDINATES">
+        <attributes>
+          <attributeRef>#loc_id$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>loc_id</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="GEODB_COORDINATES_loc_id" attributeName="loc_id">
+            <descriptions defaultDescription="GEODB_COORDINATES_loc_id"/>
+          </attributeReference>
+          <attributeReference alias="GEODB_COORDINATES_valid_since" attributeName="valid_since" hidden="true"/>
+          <attributeReference alias="GEODB_COORDINATES_date_type_since" attributeName="date_type_since" hidden="true"/>
+          <attributeReference alias="GEODB_COORDINATES_valid_until" attributeName="valid_until" hidden="true"/>
+          <attributeReference alias="GEODB_COORDINATES_date_type_until" attributeName="date_type_until" hidden="true"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/OpenGeoDB.content/calculationviews/GEODB_FLOATDATA">
+        <attributes>
+          <attributeRef>#loc_id$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>loc_id</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="GEODB_FLOATDATA_loc_id" attributeName="loc_id"/>
+          <attributeReference alias="GEODB_FLOATDATA_valid_since" attributeName="valid_since" hidden="true"/>
+          <attributeReference alias="GEODB_FLOATDATA_date_type_since" attributeName="date_type_since" hidden="true"/>
+          <attributeReference alias="GEODB_FLOATDATA_valid_until" attributeName="valid_until" hidden="true"/>
+          <attributeReference alias="GEODB_FLOATDATA_date_type_until" attributeName="date_type_until" hidden="true"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/OpenGeoDB.content/calculationviews/GEODB_INTDATA">
+        <attributes>
+          <attributeRef>#loc_id$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>loc_id</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="GEODB_INTDATA_loc_id" attributeName="loc_id"/>
+          <attributeReference alias="GEODB_INTDATA_valid_since" attributeName="valid_since" hidden="true"/>
+          <attributeReference alias="GEODB_INTDATA_date_type_since" attributeName="date_type_since" hidden="true"/>
+          <attributeReference alias="GEODB_INTDATA_valid_until" attributeName="valid_until" hidden="true"/>
+          <attributeReference alias="GEODB_INTDATA_date_type_until" attributeName="date_type_until" hidden="true"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/OpenGeoDB.content/calculationviews/GEODB_HIERARCHIES">
+        <attributes>
+          <attributeRef>#loc_id$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>loc_id</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="GEODB_HIERARCHIES_loc_id" attributeName="loc_id"/>
+          <attributeReference alias="GEODB_HIERARCHIES_valid_since" attributeName="valid_since" hidden="true"/>
+          <attributeReference alias="GEODB_HIERARCHIES_date_type_since" attributeName="date_type_since" hidden="true"/>
+          <attributeReference alias="GEODB_HIERARCHIES_valid_until" attributeName="valid_until" hidden="true"/>
+          <attributeReference alias="GEODB_HIERARCHIES_date_type_until" attributeName="date_type_until" hidden="true"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+    </sharedDimensions>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="GEODB_LOCATIONS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="275"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape modelObjectName="GEODB_LOCATIONS" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+        <upperLeftCorner x="304" y="304"/>
+      </shape>
+      <shape modelObjectName="/dev.geodb/calculationviews/GEODB_TEXTDATA" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+        <upperLeftCorner x="558" y="160"/>
+      </shape>
+      <shape modelObjectName="/OpenGeoDB.content/calculationviews/GEODB_COORDINATES" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+        <upperLeftCorner x="16" y="16"/>
+      </shape>
+      <shape modelObjectName="/OpenGeoDB.content/calculationviews/GEODB_FLOATDATA" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+        <upperLeftCorner x="16" y="225"/>
+      </shape>
+      <shape modelObjectName="/OpenGeoDB.content/calculationviews/GEODB_INTDATA" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+        <upperLeftCorner x="558" y="385"/>
+      </shape>
+      <shape modelObjectName="/OpenGeoDB.content/calculationviews/GEODB_HIERARCHIES" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+        <upperLeftCorner x="16" y="402"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

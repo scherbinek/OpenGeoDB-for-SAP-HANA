@@ -1,0 +1,25 @@
+// geodb_hierarchies
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "loc_id";  sqlType = INTEGER; nullable = false; },
+    {name = "level";  sqlType = INTEGER; nullable = false; },
+    {name = "id_lvl1";  sqlType = INTEGER; nullable = false; },
+    {name = "id_lvl2";  sqlType = INTEGER; },
+    {name = "id_lvl3";  sqlType = INTEGER; },
+    {name = "id_lvl4";  sqlType = INTEGER; },
+    {name = "id_lvl5";  sqlType = INTEGER; },
+    {name = "id_lvl6";  sqlType = INTEGER; },
+    {name = "id_lvl7";  sqlType = INTEGER; },
+    {name = "id_lvl8";  sqlType = INTEGER; },
+    {name = "id_lvl9";  sqlType = INTEGER; },
+    {name = "valid_since";  sqlType = NVARCHAR; length = 10; },	
+    {name = "date_type_since";  sqlType = INTEGER; },    
+    {name = "valid_until";  sqlType = NVARCHAR; length = 10; nullable = false; },
+    {name = "date_type_until";  sqlType = INTEGER; nullable = false; }
+];
+
+// table.primaryKey.pkcolumns = ["MY_COL1", "MY_COL2"];

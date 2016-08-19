@@ -1,0 +1,12 @@
+// geodb_locations
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "loc_id";  sqlType = INTEGER; nullable = false; },
+    {name = "loc_type";  sqlType = INTEGER; nullable = false; }
+];
+
+table.primaryKey.pkcolumns = ["loc_id"];

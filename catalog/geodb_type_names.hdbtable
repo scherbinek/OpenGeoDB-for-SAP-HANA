@@ -1,0 +1,13 @@
+// geodb_type_names
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "type_id";  sqlType = INTEGER; nullable = false; },
+    {name = "type_locale";  sqlType = NVARCHAR; length = 5; nullable = false; },
+    {name = "name";  sqlType = NVARCHAR; length = 255; nullable = false; }
+];
+
+table.primaryKey.pkcolumns = ["type_id", "type_locale"];

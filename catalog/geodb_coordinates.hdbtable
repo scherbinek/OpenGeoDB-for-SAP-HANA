@@ -1,0 +1,19 @@
+// geodb_coordinates
+
+table.schemaName = "OPENGEODB";
+table.tableType = COLUMNSTORE; 
+
+table.columns =
+ [
+    {name = "loc_id";  sqlType = INTEGER; nullable = false; },
+    {name = "coord_type";  sqlType = INTEGER; nullable = false; },
+    {name = "lat";  sqlType = DOUBLE; },
+    {name = "lon";  sqlType = DOUBLE; },
+    {name = "coord_subtype";  sqlType = INTEGER; },
+    {name = "valid_since";  sqlType = NVARCHAR; length = 10; },	
+    {name = "date_type_since";  sqlType = INTEGER; },    
+    {name = "valid_until";  sqlType = NVARCHAR; length = 10; nullable = false; },
+    {name = "date_type_until";  sqlType = INTEGER; nullable = false; }
+];
+
+// table.primaryKey.pkcolumns = ["MY_COL1", "MY_COL2"];
