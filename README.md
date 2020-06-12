@@ -15,5 +15,5 @@ Replace the SQLfiles by the prefix 'OpenGeoDB.catalog::' <br>
 Search for:   INTO geodb <br>
 Replace with: INTO "OpenGeoDB.catalog::geodb <br>
 
-Search for:    VALUES
+Search for:    VALUES <br>
 Replace with: " VALUES
