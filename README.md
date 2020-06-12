@@ -13,4 +13,7 @@ SET SCHEMA OPENGEODB <br>
 
 Replace the SQLfiles by the prefix 'OpenGeoDB.catalog::' <br>
 Search for:   INTO geodb <br>
-Replace with: INTO OpenGeoDB.catalog::geodb
+Replace with: INTO "OpenGeoDB.catalog::geodb <br>
+
+Search for:    VALUES
+Replace with: " VALUES
